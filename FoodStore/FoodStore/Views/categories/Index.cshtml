@@ -1,0 +1,36 @@
+﻿@model IEnumerable<FoodStore.Models.category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Categories</h2>
+
+
+
+<div class="container-fluid service py-5">
+    <div class="container py-5">
+        <div class="row g-4 justify-content-center">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-6 col-lg-4">
+                    <a href="@Url.Action(item.name, "categories")">
+                        <div class="service-item bg-secondary rounded border border-secondary">
+                            <img src="@item.image_url" class="img-fluid rounded-top w-100" style="height:280px !important"  alt="">
+                            <div class="px-4 rounded-bottom">
+                                <div class="service-content bg-primary text-center p-4 rounded">
+                                    <h5 class="text-white">@item.name</h5>
+                                    <h3 class="mb-0">20% OFF</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+

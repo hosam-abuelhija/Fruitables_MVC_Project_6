@@ -1,0 +1,74 @@
+﻿@model FoodStore.Models.user
+@{
+    ViewBag.Title = "Profile";
+}
+
+@section stylesheet {
+    <style>
+        
+
+
+        .card {
+            width: 350px;
+            background-color: #efefef;
+            border: none;
+            cursor: pointer;
+            transition: all 0.5s;
+        }
+
+        .image img {
+            transition: all 0.5s;
+            border-radius: 50%;
+        }
+
+        .card:hover .image img {
+            transform: scale(1.5)
+        }
+
+        .btn5 {
+            height: 140px;
+            width: 140px;
+            border-radius: 50%
+        }
+
+        .name {
+            font-size: 22px;
+            font-weight: bold
+        }
+
+        .idd {
+            font-size: 14px;
+            font-weight: 600
+        }
+
+        .idd1 {
+            font-size: 12px
+        }
+
+        .text span {
+            font-size: 13px;
+            color: #545454;
+            font-weight: 500
+        }
+
+
+        
+
+        
+    </style>
+}
+    <h2>Profile</h2>
+    <br />
+    <br />
+    <br />
+    <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+        <div class="card p-4">
+            <div class="image d-flex flex-column justify-content-center align-items-center">
+                <button class="btn5">
+                    <img src="~/profilesimgs/@Model.image_url" height="100" width="100" />
+                </button>
+                <span class="name mt-3">@Model.name</span>
+                <span class="idd">@Model.email</span>
+            </div>
+        </div>
+    </div>

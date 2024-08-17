@@ -1,0 +1,41 @@
+﻿@model FoodStore.Models.product
+@{
+    ViewBag.Title = "Product";
+}
+
+<h2 style="margin-top:100px; margin-left:150px">Our Organic Products</h2>
+<div style="margin-left:150px; margin-right:150px; margin-bottom:100px;">
+    <br />
+    <div class="row g-4">
+        <div class="col-lg-6" style="width:550px;">
+            <div class="border rounded" style="width:500px;">
+                <a href="#">
+                    <img src="@Model.image_url" class="img-fluid rounded" alt="Image" style="height:450px; width:500px;">
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <h4 class="fw-bold mb-3">@Model.name</h4>
+            <p class="mb-3">Category: @Model.category.name</p>
+            <h5 class="fw-bold mb-3">@Model.price JD / kg</h5>
+            <div class="d-flex mb-4">
+                <i class="fa fa-star text-secondary"></i>
+                <i class="fa fa-star text-secondary"></i>
+                <i class="fa fa-star text-secondary"></i>
+                <i class="fa fa-star text-secondary"></i>
+                <i class="fa fa-star"></i>
+            </div>
+            <p class="mb-4">@Model.description</p>
+
+            @using (Html.BeginForm("AddToCart", "carts", FormMethod.Post))
+            {
+                @Html.Hidden("productId", Model.id)
+                <input type="hidden" name="quantity" value="1" />
+                <button type="submit" class="btn border border-secondary rounded-pill px-3 text-primary">
+                    <i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart
+                </button>
+            }
+        </div>
+    </div>
+
+</div>
