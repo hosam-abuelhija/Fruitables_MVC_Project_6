@@ -391,6 +391,8 @@
     <Content Include="Views\Home\Profile.cshtml" />
     <Content Include="Views\carts\Index.cshtml" />
     <Content Include="Views\categories\Product.cshtml" />
+    <Content Include="Views\categories\Shop.cshtml" />
+    <Content Include="Views\Home\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

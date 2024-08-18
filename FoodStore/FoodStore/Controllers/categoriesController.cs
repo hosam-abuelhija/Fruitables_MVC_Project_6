@@ -35,6 +35,11 @@ namespace FoodStore.Controllers
             return View(db.products.ToList());
         }
 
+        public ActionResult Shop()
+        {
+            return View(db.products.ToList());
+        }
+
         public ActionResult Product(int? id)
         {
             if (id == null)
